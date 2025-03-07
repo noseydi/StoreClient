@@ -78,6 +78,12 @@
             "production": {
               "buildTarget": "StoreClient:build:production"
             },
+            "options":{
+              "buildTarget" : "StoreClient:build",
+              "sslKey": "./ssl/server.key",
+              "sslCert": "./ssl/server.crt",
+              "ssl":true
+            },
             "development": {
               "buildTarget": "StoreClient:build:development"
             }
@@ -110,5 +116,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9b163ef3-0392-4295-bc72-45f77b24d400"
   }
 }
