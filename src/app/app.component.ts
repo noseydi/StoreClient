@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../Environments/environment';
+import { IPagination } from './shared/models/ipagination';
+import { IProduct } from './shared/models/product';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,13 +12,11 @@ import { environment } from '../Environments/environment';
 export class AppComponent implements OnInit
 {
   private backendUrl = environment.backendUrl;
-  constructor (private http: HttpClient)
+  constructor ()
   {}
 ngOnInit():void
 {
-this.http.get<any>(this.backendUrl + '/products').subscribe((res)=>{
-  console.log(res);
-});
 }
+
   title = 'StoreClient';
 }
