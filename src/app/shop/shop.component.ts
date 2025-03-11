@@ -17,10 +17,13 @@ export class ShopComponent implements OnInit , OnDestroy {
     this.sub$.unsubscribe();
   }
   ngOnInit():void{
-    const sub$ = this.shopService.getProducts().subscribe((res) => {
-console.log(res);
-    });
-    this.sub$.add(sub$);
+    this.getproducts();
+  }
+    private getproducts() {
+      const sub$ = this.shopService.getProducts().subscribe((res) => {
+        console.log(res);
+      });
+      this.sub$.add(sub$);
+    }
   }
 
-}
