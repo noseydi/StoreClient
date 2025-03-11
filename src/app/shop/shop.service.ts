@@ -16,4 +16,8 @@ getProducts():Observable <IPagination<IProduct>>
   
 return this.http.get<IPagination<IProduct>>(this.backendUrl + '/products');
 }
+getBrands()
+{}
+getTypes()
+{}
 }
