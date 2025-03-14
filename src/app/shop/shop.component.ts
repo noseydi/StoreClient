@@ -3,7 +3,7 @@ import { ShopService } from './shop.service';
 import { subscribe } from 'diagnostics_channel';
 import { Subscription } from 'rxjs';
 import { IProduct } from '../shared/models/product';
-import { IPagination } from '../shared/models/ipagination';
+import { IPagination } from '../shared/models/IPagination';
 
 @Component({
   selector: 'app-shop',
@@ -21,6 +21,16 @@ export class ShopComponent implements OnInit , OnDestroy {
   }
   ngOnInit():void{
     this.getproducts();
+    this.shopService.getBrands().subscribe((res)=>
+    {
+      console.log(res);
+    }
+  );
+  this.shopService.getTypes().subscribe((res)=>
+    {
+      console.log(res);
+    }
+        );
   }
     private getproducts() {
       const sub$ = this.shopService.getProducts().subscribe((res) => {
